@@ -35,7 +35,7 @@ namespace Application.Activities
 
                 if (activity == null)
                 {
-                    throw new Exception("Could not fint Activity!");
+                    throw new Exception("Could not find Activity!");
                 }
                 activity.Title = request.Title ?? activity.Title;
                 activity.Description = request.Description ?? activity.Description;
@@ -48,7 +48,7 @@ namespace Application.Activities
                 var success = await _context.SaveChangesAsync() > 0;
                 if (success) return Unit.Value;
 
-                throw new Exception("Provlem sabing changes");
+                throw new Exception("Problem saving changes");
 
             }
 
